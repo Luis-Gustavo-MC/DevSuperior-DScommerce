@@ -1,15 +1,12 @@
 package com.LSG.dscommerce.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
+@EqualsAndHashCode
 @NoArgsConstructor @AllArgsConstructor
 @Getter
 @Entity

@@ -4,9 +4,11 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+@EqualsAndHashCode
 @Entity
 @NoArgsConstructor
 @Table(name = "tb_order_item")
