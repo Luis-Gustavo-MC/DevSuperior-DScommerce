@@ -7,6 +7,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 @Entity
 @AllArgsConstructor @NoArgsConstructor
 @Getter @Setter
@@ -25,5 +29,10 @@ public class Order {
 
     @OneToOne(mappedBy = "order" , cascade = CascadeType.ALL)
     private Payment payment;
+    @OneToMany(mappedBy = "id.order")
+    private Set<OrderItem> items = new HashSet<>();
 
+    private List<Product> getProducts(){
+        return items.stream().map(OrderItem::getProduct).toList();
+    }
 }
